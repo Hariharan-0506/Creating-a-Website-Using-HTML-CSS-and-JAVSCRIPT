@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="STYLEE.css">
+</head>
+<body>
+    <div class="background-image">
+        <div class="contact-container">
+            <h1>Contact Us</h1>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>Phone: 9876543210</p>
+                <p>Email: info@frenchcafe.com</a></p>
+                <p>Address: 3 Rue, Dumas St, near IG Office, White Town, Puducherry</p>
+            </div>
+        </div>
+    </div>
+    <script>
+          const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('email-error');
+
+        emailInput.addEventListener('input', () => {
+            const emailValue = emailInput.value;
+            if (!validateEmail(emailValue)) {
+                emailError.textContent = 'Invalid email address';
+            } else {
+                emailError.textContent = '';
+            }
+        });
+
+        function validateEmail(email) {
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailRegex.test(email);
+        }
+
+    </script>
+
+</body>
+</html>
